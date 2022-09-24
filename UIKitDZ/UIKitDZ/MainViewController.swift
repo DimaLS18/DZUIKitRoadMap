@@ -82,11 +82,56 @@ class MainViewController: UIViewController {
         view.addSubview(hiddenNumberLabel)
     }
 
-    @objc func welcomeAllert() {}
+    func welcomeAllert() {
+        let welcomeAllert = UIAlertController(title: "Привет",
+                                              message: "Введите свое имя",
+                                              preferredStyle: .alert)
+        let action = UIAlertAction(title: "OK", style: .default) { _ in
+            guard let text = welcomeAllert.textFields?.first else { return }
+            self.nameLabel.text = text.text
+        }
+        welcomeAllert.addTextField { _ in
+        }
+        welcomeAllert.addAction(action)
+        self.present(welcomeAllert, animated: true, completion: nil)
+    }
 
-    @objc func additionAlert() {}
+    @objc func additionAlert() {
+        let additionAllert = UIAlertController(title: "Сложение",
+                                               message: "Введите числа",
+                                               preferredStyle: .alert)
+        let additionAction = UIAlertAction(title: "узнайте сумму двух чисел", style: .default) { _ in
+            guard let numberOne = additionAllert.textFields?.first else { return }
+            guard let numberTwo = additionAllert.textFields?.last else { return }
+            let intNumberOne = Int(numberOne.text ?? "0") ?? 0
+            let intNumberTwo = Int(numberTwo.text ?? "0") ?? 0
+            self.resultLabel.text = String(intNumberOne + intNumberTwo)
+        }
+        additionAllert.addTextField { _ in}
+        additionAllert.addTextField { _ in}
 
-    @objc func guessNumberAllert() { }
+        additionAllert.addAction(additionAction)
+        self.present(additionAllert, animated: true, completion: nil)
+    }
+
+    @objc func guessNumberAllert() {
+        let number = Int.random(in: 1...10)
+        let numberAllert = UIAlertController(title: "угадай число",
+                                             message: "Какое число я загадал?",
+                                             preferredStyle: .alert)
+        let numberAllertAction = UIAlertAction(title: "проверить", style: .default) { _ in
+            guard let userNumber = numberAllert.textFields?.first else { return }
+            let userInt = Int(userNumber.text ?? "0")
+            if userInt == number {
+                self.hiddenNumberLabel.text = "Вы угадали.Я загадал - \(number) "
+            } else {
+                self.hiddenNumberLabel.text = "Вы не угадали. Я загада - \(number)"
+            }
+        }
+        numberAllert.addTextField { _ in }
+        numberAllert.addAction(numberAllertAction)
+        self.present(numberAllert, animated: true, completion: nil)
+    }
 
 }
 
