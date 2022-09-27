@@ -9,21 +9,29 @@
 /* Begin PBXBuildFile section */
 		2D46815D28DCC53D00E1CB9E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D46815C28DCC53D00E1CB9E /* AppDelegate.swift */; };
 		2D46815F28DCC53D00E1CB9E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D46815E28DCC53D00E1CB9E /* SceneDelegate.swift */; };
-		2D46816128DCC53D00E1CB9E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D46816028DCC53D00E1CB9E /* ViewController.swift */; };
+		2D46816128DCC53D00E1CB9E /* PlaylistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D46816028DCC53D00E1CB9E /* PlaylistViewController.swift */; };
 		2D46816428DCC53D00E1CB9E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D46816228DCC53D00E1CB9E /* Main.storyboard */; };
 		2D46816628DCC53E00E1CB9E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D46816528DCC53E00E1CB9E /* Assets.xcassets */; };
 		2D46816928DCC53E00E1CB9E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D46816728DCC53E00E1CB9E /* LaunchScreen.storyboard */; };
+		2D5F416F28E2CD3300D848B5 /* smokiMo - german.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2D5F416E28E2CD3300D848B5 /* smokiMo - german.mp3 */; };
+		2D5F417128E2CD4300D848B5 /* Krovostok-Bio.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2D5F417028E2CD4300D848B5 /* Krovostok-Bio.mp3 */; };
+		2D5F417428E2CE7E00D848B5 /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5F417328E2CE7E00D848B5 /* Song.swift */; };
+		2D5F417628E2CED700D848B5 /* PlaySongViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5F417528E2CED700D848B5 /* PlaySongViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2D46815928DCC53D00E1CB9E /* UIKitDZ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIKitDZ.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D46815C28DCC53D00E1CB9E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2D46815E28DCC53D00E1CB9E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		2D46816028DCC53D00E1CB9E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2D46816028DCC53D00E1CB9E /* PlaylistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistViewController.swift; sourceTree = "<group>"; };
 		2D46816328DCC53D00E1CB9E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2D46816528DCC53E00E1CB9E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2D46816828DCC53E00E1CB9E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2D46816A28DCC53E00E1CB9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2D5F416E28E2CD3300D848B5 /* smokiMo - german.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "smokiMo - german.mp3"; sourceTree = "<group>"; };
+		2D5F417028E2CD4300D848B5 /* Krovostok-Bio.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Krovostok-Bio.mp3"; sourceTree = "<group>"; };
+		2D5F417328E2CE7E00D848B5 /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
+		2D5F417528E2CED700D848B5 /* PlaySongViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaySongViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +64,27 @@
 		2D46815B28DCC53D00E1CB9E /* UIKitDZ */ = {
 			isa = PBXGroup;
 			children = (
+				2D5F417228E2CE6500D848B5 /* Model */,
 				2D46815C28DCC53D00E1CB9E /* AppDelegate.swift */,
 				2D46815E28DCC53D00E1CB9E /* SceneDelegate.swift */,
-				2D46816028DCC53D00E1CB9E /* ViewController.swift */,
+				2D46816028DCC53D00E1CB9E /* PlaylistViewController.swift */,
+				2D5F417528E2CED700D848B5 /* PlaySongViewController.swift */,
 				2D46816228DCC53D00E1CB9E /* Main.storyboard */,
 				2D46816528DCC53E00E1CB9E /* Assets.xcassets */,
 				2D46816728DCC53E00E1CB9E /* LaunchScreen.storyboard */,
 				2D46816A28DCC53E00E1CB9E /* Info.plist */,
+				2D5F416E28E2CD3300D848B5 /* smokiMo - german.mp3 */,
+				2D5F417028E2CD4300D848B5 /* Krovostok-Bio.mp3 */,
 			);
 			path = UIKitDZ;
+			sourceTree = "<group>";
+		};
+		2D5F417228E2CE6500D848B5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2D5F417328E2CE7E00D848B5 /* Song.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,9 +146,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D5F416F28E2CD3300D848B5 /* smokiMo - german.mp3 in Resources */,
 				2D46816928DCC53E00E1CB9E /* LaunchScreen.storyboard in Resources */,
 				2D46816628DCC53E00E1CB9E /* Assets.xcassets in Resources */,
 				2D46816428DCC53D00E1CB9E /* Main.storyboard in Resources */,
+				2D5F417128E2CD4300D848B5 /* Krovostok-Bio.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -160,8 +182,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2D46816128DCC53D00E1CB9E /* ViewController.swift in Sources */,
+				2D5F417428E2CE7E00D848B5 /* Song.swift in Sources */,
+				2D46816128DCC53D00E1CB9E /* PlaylistViewController.swift in Sources */,
 				2D46815D28DCC53D00E1CB9E /* AppDelegate.swift in Sources */,
+				2D5F417628E2CED700D848B5 /* PlaySongViewController.swift in Sources */,
 				2D46815F28DCC53D00E1CB9E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
