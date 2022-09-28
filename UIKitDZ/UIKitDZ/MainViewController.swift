@@ -13,7 +13,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var sharePicker: UIPickerView!
     @IBOutlet weak var gradeSegment: UISegmentedControl!
 
-    let pickerData = ["Футбол", "Хоккей", "Гиманастика"]
+    let pickerData = ["Футбол", "Хоккей", "Распечатать анкеу"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
