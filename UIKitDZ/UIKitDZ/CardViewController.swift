@@ -29,7 +29,7 @@ class CardViewController: UIViewController {
 
     private let totalAmoutLabel: UILabel = {
         let label = UILabel()
-        label.text = "$ 296.12"
+        label.text = "$ 800"
         label.textColor = .black
         label.font = UIFont.boldSystemFont(ofSize: 18)
         label.frame = CGRect(x: 300, y: 650, width: 100, height: 30)
@@ -65,7 +65,7 @@ class CardViewController: UIViewController {
 
     private let subtotalAmoutLabel: UILabel = {
         let label = UILabel()
-        label.text = "$ 196.12"
+        label.text = "$ 900"
         label.textColor = .black
         label.font = UIFont.boldSystemFont(ofSize: 18)
         label.frame = CGRect(x: 300, y: 500, width: 100, height: 30)
