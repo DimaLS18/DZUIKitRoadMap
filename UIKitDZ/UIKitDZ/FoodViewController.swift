@@ -6,9 +6,11 @@
 ////
 //
 import UIKit
-/// FOOD VC
- final class FoodViewController: UIViewController {
+/// Контроллер выбора категории
+ class FoodViewController: UIViewController {
 
+     // MARK: - UIProperties
+     
     lazy var pizzaButton: UIButton = {
         let button = UIButton()
         button.setTitle("ПИЦЦА", for: .normal)
@@ -34,16 +36,18 @@ import UIKit
         button.layer.cornerRadius = 10
         return button
     }()
-
+     
+     // MARK: - LifeCicles
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupViews()
     }
 
+     // MARK: - PrivateMethod
     private func setupViews() {
         view.backgroundColor = .white
-
+        title = "FOOD"
         view.addSubview(pizzaButton)
         view.addSubview(rollButton)
     }

@@ -6,7 +6,7 @@
 //
 
 import UIKit
-///
+/// контроллер оплаты
 class BucketViewController: UIViewController {
 
     // MARK: - UIProperties
@@ -67,17 +67,19 @@ class BucketViewController: UIViewController {
 
     // MARK: - Private properties
 
-    private var fullOrder: [String] = [] {
+    var returnHandler: (() -> ())?
+
+    private var fullOrders: [String] = [] {
         didSet {
             var counter = 1
-            fullOrder.forEach {
+            fullOrders.forEach {
                 orderInfoLabel.text? += "\n\(counter). \($0)"
                 counter += 1
             }
         }
     }
 
-    // MARK: - UIViewController
+    // MARK: - LifeCicles
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -88,13 +90,14 @@ class BucketViewController: UIViewController {
     // MARK: - Public methods
 
     func setupOrderData(orders: String?...) {
-        fullOrder = orders.compactMap({ $0 })
+        fullOrders = orders.compactMap({ $0 })
     }
 
     // MARK: - Private methods
 
     private func setupView() {
         title = "Оплата"
+
         view.backgroundColor = .white
         navigationController?.navigationBar.backgroundColor = .systemGray6
         view.addSubview(paymentButton)
@@ -109,11 +112,10 @@ class BucketViewController: UIViewController {
         let alert = UIAlertController(title: "Заказ оплачен!",
                     message: "Ваш заказ принят и будет доставлен в течение 15 минут!\nПриятного аппетита",
                     preferredStyle: .alert)
-        let allertAction = UIAlertAction(title: "Ok", style: .default) { _ in
-            let foodVC = FoodViewController()
-            self.navigationController?.pushViewController(foodVC, animated: true)
-        }
-        alert.addAction(allertAction)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
+                 self.navigationController?.dismiss(animated: true)
+                 self.returnHandler?()
+             }))
         present(alert, animated: true)
     }
 

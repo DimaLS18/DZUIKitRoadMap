@@ -6,9 +6,11 @@
 //
 
 import UIKit
-/// Pizza VC
-final class PizzaViewController: UIViewController {
+/// контроллер с ассортиментом пиццы
+ class PizzaViewController: UIViewController {
 
+     // MARK: - UIProperties
+     
     private var peperoniImage: UIImageView = {
         let image = UIImageView()
         image.image = UIImage(named: "peperoni")
@@ -65,14 +67,22 @@ final class PizzaViewController: UIViewController {
             return button
         }()
 
+     private lazy var returnHandler = {
+          guard let navigationVC = self.navigationController else { return }
+          self.dismiss(animated: true)
+          navigationVC.popViewController(animated: true)
+      }
+
+     // MARK: - LifeCicles
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupViews()
     }
-
+     // MARK: - PrivateMethod
     private func setupViews() {
         view.backgroundColor = .white
+        title = "PIZZA"
 
         view.addSubview(margaritaImage)
         view.addSubview(peperoniImage)
@@ -82,11 +92,13 @@ final class PizzaViewController: UIViewController {
         view.addSubview(addMargaritaButton)
 
     }
-    private func openPizzaDetails(pizzaName: String, pizzaImageName: String) {
-            let pizzaDetailVC = PizzaDetailViewController()
-            pizzaDetailVC.setupPizzaData(pizzaName: pizzaName, pizzaImageName: pizzaImageName)
-            present(pizzaDetailVC, animated: true)
-        }
+     
+     private func openPizzaDetails(pizzaName: String, pizzaImageName: String) {
+              let pizzaDetailVC = PizzaDetailViewController()
+              pizzaDetailVC.returnHandler = returnHandler
+              pizzaDetailVC.setupPizzaData(pizzaName: pizzaName, pizzaImageName: pizzaImageName)
+              navigationController?.present(pizzaDetailVC, animated: true)
+          }
 
         @objc private func selectPizzaAction(_ sender: UIButton) {
             switch sender {

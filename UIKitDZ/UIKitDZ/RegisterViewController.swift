@@ -6,14 +6,16 @@
 //
 
 import UIKit
-/// начальный VC
-final class RegisterViewController: UIViewController {
+///  контроллер авторизации пользователя
+class RegisterViewController: UIViewController {
 
+    // MARK: - UIProperties
+    
     private var logoImage: UIImageView = {
         let image = UIImageView()
         image.image = UIImage(named: "pizza")
         image.contentMode = .scaleAspectFill
-      
+
         image.frame = CGRect(x: 100, y: 100, width: 150, height: 150)
         return image
     }()
@@ -45,6 +47,7 @@ final class RegisterViewController: UIViewController {
         let textField = UITextField()
         textField.placeholder = "введите свой пароль"
         textField.borderStyle = .none
+        textField.isSecureTextEntry = true
         textField.frame = CGRect(x: 50, y: 450, width: 300, height: 50)
         return textField
     }()
@@ -58,12 +61,15 @@ final class RegisterViewController: UIViewController {
         return button
     }()
 
+    // MARK: - LifeCicles
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupView()
     }
 
+    // MARK: - PrivateMethod
+    
     private func setupView() {
         view.backgroundColor = .white
 
