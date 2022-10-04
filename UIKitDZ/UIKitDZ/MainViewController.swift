@@ -6,7 +6,7 @@
 //
 
 import UIKit
-/// начальный VC
+/// контроллер для авторизации пользователя
 class MainViewController: UIViewController {
 
     @IBOutlet weak var emailTextField: UITextField!
@@ -18,11 +18,11 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let recognizer = UITapGestureRecognizer(target: self, action: #selector(oneTop(_:)))
-        self.view.addGestureRecognizer(recognizer)
+        let recognizer = UITapGestureRecognizer(target: self, action: #selector(oneTopAction(_:)))
+        view.addGestureRecognizer(recognizer)
     }
 
-       @objc func oneTop(_ sender: Any) {
+       @objc func oneTopAction(_ sender: Any) {
             self.view.endEditing(true)
         }
     }
