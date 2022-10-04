@@ -90,10 +90,9 @@ class MainViewController: UIViewController {
             guard let text = welcomeAllert.textFields?.first else { return }
             self.nameLabel.text = text.text
         }
-        welcomeAllert.addTextField { _ in
-        }
+        welcomeAllert.addTextField()
         welcomeAllert.addAction(action)
-        self.present(welcomeAllert, animated: true, completion: nil)
+       present(welcomeAllert, animated: true, completion: nil)
     }
 
     @objc func additionAlert() {
@@ -107,11 +106,11 @@ class MainViewController: UIViewController {
             let intNumberTwo = Int(numberTwo.text ?? "0") ?? 0
             self.resultLabel.text = String(intNumberOne + intNumberTwo)
         }
-        additionAllert.addTextField { _ in}
-        additionAllert.addTextField { _ in}
+        additionAllert.addTextField()
+        additionAllert.addTextField()
 
         additionAllert.addAction(additionAction)
-        self.present(additionAllert, animated: true, completion: nil)
+        present(additionAllert, animated: true, completion: nil)
     }
 
     @objc func guessNumberAllert() {
@@ -128,9 +127,9 @@ class MainViewController: UIViewController {
                 self.hiddenNumberLabel.text = "Вы не угадали. Я загада - \(number)"
             }
         }
-        numberAllert.addTextField { _ in }
+        numberAllert.addTextField()
         numberAllert.addAction(numberAllertAction)
-        self.present(numberAllert, animated: true, completion: nil)
+        present(numberAllert, animated: true, completion: nil)
     }
 
 }
