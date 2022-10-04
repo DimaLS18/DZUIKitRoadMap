@@ -9,7 +9,7 @@ import UIKit
 /// начальный VC
 class MainViewController: UIViewController {
 
-     let wordLabel: UILabel = {
+    let wordLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -18,18 +18,18 @@ class MainViewController: UIViewController {
     lazy var startButton: UIButton = {
         let button = UIButton()
         button.backgroundColor = .red
-               button.layer.cornerRadius = 10
-               button.setTitle("PLAY", for: .normal)
-               button.layer.borderWidth = 5
-               button.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-               button.addTarget(self,
-                                action: #selector(wordAllert),
-                                for: .touchUpInside)
+        button.layer.cornerRadius = 10
+        button.setTitle("PLAY", for: .normal)
+        button.layer.borderWidth = 5
+        button.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        button.addTarget(self,
+                         action: #selector(wordAllertAction),
+                         for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
 
-    let model = Word()
+    let word = Word()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,14 +44,14 @@ class MainViewController: UIViewController {
         view.addSubview(startButton)
     }
 
-    @objc private func wordAllert() {
+    @objc private func wordAllertAction() {
 
         let wordAllert = UIAlertController(title: "Привет",
                                            message: "введите leohl",
                                            preferredStyle: .alert)
         let wordAction = UIAlertAction(title: "Творим магию", style: .default) {_ in
             guard let text = wordAllert.textFields?.first?.text else { return}
-            self.wordLabel.text = self.model.makeWord(word: text)
+            self.wordLabel.text = self.word.makeWord(word: text)
         }
         wordAllert.addTextField()
         wordAllert.addAction(wordAction)

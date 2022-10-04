@@ -7,7 +7,7 @@
 
 import Foundation
 import UIKit
-/// структура модели
+///  модель Word  - возвращает нужное значение
 struct Word {
     func makeWord(word: String) -> String {
         switch word {
