@@ -85,7 +85,6 @@ extension AddBirthdayViewController: UIPickerViewDelegate, UIPickerViewDataSourc
          button.setTitle("Изменить фото", for: .normal)
          button.titleLabel?.textAlignment = .center
          button.setTitleColor(UIColor.systemBlue, for: .normal)
-         button.addTarget(self, action: #selector(changeFotoAction), for: .touchDown)
          return button
      }()
 
@@ -181,13 +180,14 @@ extension AddBirthdayViewController: UIPickerViewDelegate, UIPickerViewDataSourc
      override func viewDidLoad() {
          super.viewDidLoad()
          setupViews()
-         createDatePicker()
-         configureAgePickerView()
-         configureSexPickerView()
      }
 
      private func setupViews() {
          view.backgroundColor = .white
+
+         createDatePicker()
+         configureAgePickerView()
+         configureSexPickerView()
 
          view.addSubview(cancelButton)
          view.addSubview(addButton)
@@ -220,19 +220,16 @@ extension AddBirthdayViewController: UIPickerViewDelegate, UIPickerViewDataSourc
          let alertController = UIAlertController(title: "Карточка заполнена",
                                                  message: "Информация успешно сохранена",
                                                  preferredStyle: .alert)
-         let ok = UIAlertAction(title: "OK", style: .default)
-         alertController.addAction(ok)
-         self.present(alertController, animated: true)
-     }
-
-     @objc private func changeFotoAction() {
+         let alertControllerOkAction = UIAlertAction(title: "OK", style: .default)
+         alertController.addAction(alertControllerOkAction)
+         present(alertController, animated: true)
      }
 
      @objc private func datePickerButtonAction() {
          let formatter = DateFormatter()
          formatter.dateStyle = .full
          dataTextField.text = formatter.string(from: dataPicker.date)
-         self.view.endEditing(true)
+         view.endEditing(true)
      }
 
      @objc private func instagramAlertAction() {
