@@ -6,7 +6,7 @@
 //
 
 import UIKit
-/// Экран деталей
+/// контроллер выбора характеристик
 class DetailViewController: UIViewController {
 
     private lazy var itemImageView: UIImageView = {
@@ -39,7 +39,7 @@ class DetailViewController: UIViewController {
         button.backgroundColor = .black
         button.setTitle("Add to cart", for: .normal)
         button.setTitleColor(.white, for: .normal)
-        button.addTarget(self, action: #selector(cartButtonTapped), for: .touchUpInside)
+        button.addTarget(self, action: #selector(cartButtonTappedAction), for: .touchUpInside)
         return button
     }()
     private var imageName: String
@@ -71,7 +71,7 @@ class DetailViewController: UIViewController {
         view.addSubview(sizeSegment)
     }
 
-    @objc private func cartButtonTapped() {
+    @objc private func cartButtonTappedAction() {
         let cardVC = CardViewController()
         navigationController?.pushViewController(cardVC, animated: true)
     }

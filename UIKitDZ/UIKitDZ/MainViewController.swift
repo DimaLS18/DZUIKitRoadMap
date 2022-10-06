@@ -20,7 +20,7 @@ class MainViewController: UIViewController {
         let segment = UISegmentedControl(items: modelSigment)
         segment.frame = CGRect(x: 20, y: 100, width: 330, height: 40)
         segment.selectedSegmentIndex = 0
-        segment.addTarget(self, action: #selector(selectedValue), for: .valueChanged)
+        segment.addTarget(self, action: #selector(selectedValueAction), for: .valueChanged)
 
         return segment
     }()
@@ -31,7 +31,7 @@ class MainViewController: UIViewController {
         imageView.contentMode = .scaleAspectFit
         imageView.isUserInteractionEnabled = true
         let gestureRecognizer = UITapGestureRecognizer()
-        gestureRecognizer.addTarget(self, action: #selector(selectProduct))
+        gestureRecognizer.addTarget(self, action: #selector(selectProductAction))
         imageView.addGestureRecognizer(gestureRecognizer)
         return imageView
     }()
@@ -58,11 +58,11 @@ class MainViewController: UIViewController {
 
     }
 
-    @objc private func selectedValue(target: UISegmentedControl) {
+    @objc private func selectedValueAction(target: UISegmentedControl) {
         if target == self.modelSegment {
             let segmentIndex = target.selectedSegmentIndex
 
-            self.productImageView.image = self.productImageArray[segmentIndex]
+            productImageView.image = self.productImageArray[segmentIndex]
         }
     }
 
@@ -71,7 +71,7 @@ class MainViewController: UIViewController {
         navigationController?.pushViewController(detailsVC, animated: true)
     }
 
-    @objc private func selectProduct(_ sender: UITapGestureRecognizer) {
+    @objc private func selectProductAction(_ sender: UITapGestureRecognizer) {
         openDetails(imageName: "iphone14")
     }
 }

@@ -6,7 +6,7 @@
 //
 
 import UIKit
-/// Экран корзины
+/// контроллер совершения покупки
 class CardViewController: UIViewController {
 
     private let checkoutButton: UIButton = {
@@ -72,7 +72,7 @@ class CardViewController: UIViewController {
         return label
     }()
 
-    // MARK: - UIViewController
+    // MARK: - life cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
