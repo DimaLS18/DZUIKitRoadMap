@@ -7,7 +7,7 @@
 
 import UIKit
 /// контроллер оплаты
-class BucketViewController: UIViewController {
+final class BucketViewController: UIViewController {
 
     // MARK: - UIProperties
 

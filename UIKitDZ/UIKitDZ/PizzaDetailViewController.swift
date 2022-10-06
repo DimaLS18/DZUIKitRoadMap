@@ -7,7 +7,7 @@
 
 import UIKit
 /// контроллер добавление индегридиентов к пицце
-class PizzaDetailViewController: UIViewController {
+final class PizzaDetailViewController: UIViewController {
 
     // MARK: - UIProperties
 

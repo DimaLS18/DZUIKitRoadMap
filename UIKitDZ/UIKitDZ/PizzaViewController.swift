@@ -7,11 +7,11 @@
 
 import UIKit
 /// контроллер с ассортиментом пиццы
- class PizzaViewController: UIViewController {
+ final class PizzaViewController: UIViewController {
 
      // MARK: - UIProperties
      
-    private var peperoniImage: UIImageView = {
+    private var peperoniImageView: UIImageView = {
         let image = UIImageView()
         image.image = UIImage(named: "peperoni")
         image.contentMode = .scaleAspectFill
@@ -26,7 +26,7 @@ import UIKit
         return label
     }()
 
-    private var margaritaImage: UIImageView = {
+    private var margaritaImageView: UIImageView = {
         let image = UIImageView()
         image.image = UIImage(named: "chees")
         image.contentMode = .scaleAspectFill
@@ -84,8 +84,8 @@ import UIKit
         view.backgroundColor = .white
         title = "PIZZA"
 
-        view.addSubview(margaritaImage)
-        view.addSubview(peperoniImage)
+        view.addSubview(margaritaImageView)
+        view.addSubview(peperoniImageView)
         view.addSubview(peperoniLabel)
         view.addSubview(margaritaiLabel)
         view.addSubview(addPepperoniButton)

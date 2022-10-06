@@ -7,7 +7,7 @@
 //
 import UIKit
 /// Контроллер выбора категории
- class FoodViewController: UIViewController {
+final class FoodViewController: UIViewController {
 
      // MARK: - UIProperties
      

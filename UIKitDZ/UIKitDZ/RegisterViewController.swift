@@ -7,11 +7,11 @@
 
 import UIKit
 ///  контроллер авторизации пользователя
-class RegisterViewController: UIViewController {
+final class RegisterViewController: UIViewController {
 
     // MARK: - UIProperties
     
-    private var logoImage: UIImageView = {
+    private var logoImageView: UIImageView = {
         let image = UIImageView()
         image.image = UIImage(named: "pizza")
         image.contentMode = .scaleAspectFill
@@ -78,8 +78,8 @@ class RegisterViewController: UIViewController {
         view.addSubview(phoneTextField)
         view.addSubview(passwpordTextField)
         view.addSubview(enterButton)
-        view.addSubview(logoImage)
-        view.addSubview(logoImage)
+        view.addSubview(logoImageView)
+        view.addSubview(logoImageView)
     }
 
     @objc private func enterBottonAction() {
