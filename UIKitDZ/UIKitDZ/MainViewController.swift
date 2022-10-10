@@ -28,14 +28,14 @@ final class MainViewController: UIViewController {
         return slider
     }()
 
-    private let textColorPicker: UIPickerView = {
+    private let textColorPickerView: UIPickerView = {
         var picker = UIPickerView()
         picker.frame = CGRect(x: 20, y: 530, width: 170, height: 160)
         picker.tag = 1
         return picker
     }()
 
-    private let amountLinesPicker: UIPickerView = {
+    private let amountLinesPickerView: UIPickerView = {
         var picker = UIPickerView()
         picker.frame = CGRect(x: 200, y: 530, width: 170, height: 160)
         picker.tag = 2
@@ -126,12 +126,10 @@ final class MainViewController: UIViewController {
     private func setupView() {
         view.addSubview(textLabel)
         view.addSubview(sizeTextSlider)
-        view.addSubview(textColorPicker)
-        view.addSubview(amountLinesPicker)
-        view.addSubview(textColorPicker)
+        view.addSubview(textColorPickerView)
+        view.addSubview(amountLinesPickerView)
         view.addSubview(textShadowSwitch)
         view.addSubview(textTransferSwitch)
-        view.addSubview(textColorPicker)
         view.addSubview(sizeLabel)
         view.addSubview(choiceColorLabel)
         view.addSubview(choiceLineLabel)
@@ -140,10 +138,10 @@ final class MainViewController: UIViewController {
 
         navigationItem.rightBarButtonItem = addTextBarButton
 
-                textColorPicker.delegate = self
-                textColorPicker.dataSource = self
-                amountLinesPicker.delegate = self
-                amountLinesPicker.dataSource = self
+                textColorPickerView.delegate = self
+                textColorPickerView.dataSource = self
+                amountLinesPickerView.delegate = self
+                amountLinesPickerView.dataSource = self
     }
 
     // MARK: - obj Private Methods
