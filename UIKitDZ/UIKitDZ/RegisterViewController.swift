@@ -6,12 +6,12 @@
 //
 
 import UIKit
-/// контроллер регистрации
-class RegisterViewController: UIViewController {
+/// экран регистрации
+final class RegisterViewController: UIViewController {
     // MARK: - IBOutlet
-    @IBOutlet weak var mobileTextField: UITextField!
-    @IBOutlet weak var loginTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet private weak var mobileTextField: UITextField!
+    @IBOutlet private weak var loginTextField: UITextField!
+    @IBOutlet private weak var passwordTextField: UITextField!
     
     // MARK: - PrivateProperty
     

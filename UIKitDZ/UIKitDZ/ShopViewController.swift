@@ -6,11 +6,11 @@
 //
 
 import UIKit
-/// контроллер магазина
-class ShopViewController: UIViewController {
+/// экран магазина
+final class ShopViewController: UIViewController {
 
-    @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var segmentController: UISegmentedControl!
+    @IBOutlet private weak var imageView: UIImageView!
+    @IBOutlet private weak var segmentController: UISegmentedControl!
 
     private var images = [UIImage(named: "home"),
                           UIImage(named: "away")]

@@ -6,13 +6,13 @@
 //
 
 import UIKit
-/// контроллер входа пользователя
+/// Экран входа
 final class LoginViewController: UIViewController {
 
     // MARK: - IBOutlet
 
-    @IBOutlet weak var loginTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet private weak var loginTextField: UITextField!
+    @IBOutlet private weak var passwordTextField: UITextField!
 
     // MARK: - Private properties
     private(set) var key = ""
@@ -26,7 +26,6 @@ final class LoginViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        key = UserDefaults.standard.string(forKey: "loginTextField") ?? ""
     }
 
     // MARK: - IBAction
@@ -46,6 +45,7 @@ final class LoginViewController: UIViewController {
 
         self.loginTextField.delegate = self
         self.passwordTextField.delegate = self
+        key = UserDefaults.standard.string(forKey: "loginTextField") ?? ""
     }
 
     private func goToShopVC() {
