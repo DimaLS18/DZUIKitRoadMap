@@ -12,7 +12,7 @@ final class TimerViewController: UIViewController {
 
     // MARK: - IBOutlet
 
-    @IBOutlet weak var timerPickerView: UIPickerView!
+    @IBOutlet private weak var timerPickerView: UIPickerView!
 
     // MARK: - Private properties
 
@@ -24,8 +24,16 @@ final class TimerViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        timerPickerView.dataSource = self
+        timePickerDelegate()
+        timePickerdataSource()
+    }
+    // MARK: - Private method
+    private func timePickerDelegate() {
         timerPickerView.delegate = self
+    }
+
+    private func timePickerdataSource() {
+        timerPickerView.dataSource = self
     }
 }
 
