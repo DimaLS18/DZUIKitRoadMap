@@ -7,7 +7,7 @@
 
 import UIKit
 /// начальный VC
-class MainViewController: UIViewController {
+final class MainViewController: UIViewController {
 
     // MARK: - Constants
     private enum Constants {
@@ -19,8 +19,8 @@ class MainViewController: UIViewController {
 
     // MARK: - Private IBOutlets
 
-    @IBOutlet weak var timerLabel: UILabel!
-    @IBOutlet weak var activateTimerButton: UIButton!
+    @IBOutlet private weak var timerLabel: UILabel!
+    @IBOutlet private weak var activateTimerButton: UIButton!
 
     // MARK: - Private properties
     private var timer: Timer?
@@ -81,20 +81,12 @@ class MainViewController: UIViewController {
 
     // MARK: - IBActions
 
-    @IBAction func activateTimerButtonAction(_ sender: UIButton) {
+    @IBAction private func activateTimerButtonAction(_ sender: UIButton) {
         isTimerActive.toggle()
     }
 
-//    @IBAction private func activateTimerButtonAction(_ sender: UIButton) {
-//        isTimerActive.toggle()
-//    }
-
-    @IBAction func stopTimerButtonAction(_ sender: Any) {
+    @IBAction private func stopTimerButtonAction(_ sender: Any) {
         setupStoppedTimer()
         setupNonActiveTimer()
     }
-    //    @IBAction func stopTimerButtonAction(_ sender: UIButton) {
-//        setupStoppedTimer()
-//        setupNonActiveTimer()
-//    }
 }
