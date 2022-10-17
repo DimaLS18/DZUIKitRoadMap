@@ -6,8 +6,8 @@
 //
 
 import UIKit
-/// начальный VC
-class ViewController: UIViewController {
+/// constraints через storyboard
+class StoryboardViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
