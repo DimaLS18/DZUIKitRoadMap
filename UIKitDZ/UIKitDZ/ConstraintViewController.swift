@@ -40,10 +40,10 @@ final class ConstraintViewController: UIViewController {
         view.addSubview(redView)
         view.addSubview(yellowView)
         view.addSubview(greenView)
-        createRedConstraint()
-        createYellowConstraint()
-        createGreenConstraint()
-        createBlackConstraint()
+        createRedConstraints()
+        createYellowConstraints()
+        createGreenConstraints()
+        createBlackConstraints()
     }
 
     private func createView(size: Int, color: UIColor) -> UIView {
@@ -53,7 +53,7 @@ final class ConstraintViewController: UIViewController {
         return view
     }
 
-    private func createRedConstraint() {
+    private func createRedConstraints() {
         NSLayoutConstraint(item: redView,
                            attribute: .height,
                            relatedBy: .equal,
@@ -84,7 +84,7 @@ final class ConstraintViewController: UIViewController {
                            constant: 0).isActive = true
     }
 
-    private func createYellowConstraint() {
+    private func createYellowConstraints() {
         NSLayoutConstraint(item: yellowView,
                            attribute: .height,
                            relatedBy: .equal,
@@ -115,7 +115,7 @@ final class ConstraintViewController: UIViewController {
                            constant: 0).isActive = true
     }
 
-    private func createGreenConstraint() {
+    private func createGreenConstraints() {
         NSLayoutConstraint(item: greenView,
                            attribute: .height,
                            relatedBy: .equal,
@@ -146,7 +146,7 @@ final class ConstraintViewController: UIViewController {
                            constant: -38).isActive = true
     }
 
-    private func createBlackConstraint() {
+    private func createBlackConstraints() {
         NSLayoutConstraint(item: blackView,
                            attribute: .top,
                            relatedBy: .equal,
